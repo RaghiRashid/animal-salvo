@@ -13,7 +13,7 @@ class CreateFoundLocalizationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('found_localizations', function (Blueprint $table)
+        Schema::create('locations', function (Blueprint $table)
         {
             $table->id();
             $table->string('street', 150);
@@ -21,6 +21,7 @@ class CreateFoundLocalizationsTable extends Migration
             $table->string('district', 150);
             $table->string('city', 150);
             $table->string('state', 150);
+            $table->string('status', 1);
             $table->timestamps();
         });
     }
