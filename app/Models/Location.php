@@ -15,6 +15,6 @@ class Location extends Model
         'district',
         'city',
         'state',
-        'status',
+        'number'
     ];
 }

@@ -16,9 +16,7 @@ class AnimalFound extends Model
         'animal_size',
         'animal_specie',
         'found_location_id',
-        'current_location_id',
-        'user_id',
-        'description'
+        'gender'
     ];
 
     public function breed()
