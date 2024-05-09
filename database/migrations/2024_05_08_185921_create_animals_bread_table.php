@@ -17,6 +17,8 @@ class CreateAnimalsBreadTable extends Migration
         {
             $table->id();
             $table->string('breed_name', 100);
+            $table->integer('specie_id');
+
         });
     }
 

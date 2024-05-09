@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFoundLocalizationsTable extends Migration
+class CreateLocations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFoundLocalizationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('locations', function (Blueprint $table)
+        Schema::create('animals_specie', function (Blueprint $table)
         {
             $table->id();
             $table->string('street', 150);
@@ -33,6 +33,8 @@ class CreateFoundLocalizationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('found_localizations');
+        Schema::table('locations', function (Blueprint $table) {
+            //
+        });
     }
 }
