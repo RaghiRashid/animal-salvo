@@ -1,10 +1,5 @@
 <x-layout>
 
-<nav class="navbar">
-    <div class="logo">Animal Salvo</div>
-    <div><a  class="home-link" href="/animal">Home</a></div>
-</nav>
-
 <div class="content">
     <img src={{asset("/img/animal.png")}} alt="Imagem" class="image">
     <div class="buttons">
@@ -45,6 +40,11 @@
                <input type="text" required>
                <div class="underline"></div>
                <label for="">Cor</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required>
+               <div class="underline"></div>
+               <label for="">Foto</label>
             </div>
             
          </div>
@@ -119,6 +119,7 @@
          </div>
       </form>
 
+</div>
 
 
 </x-layout>

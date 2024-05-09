@@ -27,10 +27,11 @@
 
 .content {
   display: flex;
+  Height: 100v;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 60px);
+  height: 100vh;
   background-color: #30E65E; /* Green color */
 }
 
@@ -73,6 +74,7 @@ button:hover {
   max-width: 800px; /* largura máxima */
   margin: auto; /* centraliza horizontalmente */
   margin-top: 50px; 
+  margin-bottom: 60px; 
   background: #fff;
   padding: 25px 40px 10px 40px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
@@ -159,7 +161,6 @@ form .form-row .textarea {
 
 .input-data .underline:before {
   position: absolute;
-  content: "";
   height: 2px;
   width: 100%;
   background: #3498db;
@@ -230,4 +231,18 @@ form .form-row .textarea {
   .submit-btn .input-data {
     width: 40%!important;
   }
+}
+
+footer {
+  background-color: #333; /* Dark background color */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
 }

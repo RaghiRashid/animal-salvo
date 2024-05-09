@@ -10,4 +10,8 @@ class AnimalController extends Controller
     {
         return view('animal.home');
     }
+    public function show()
+    {
+        return view('animal.list');
+    }
 }
