@@ -52,5 +52,8 @@ class AnimalController extends Controller
         ]));
 
         return redirect('/animal');
+    public function show()
+    {
+        return view('animal.list');
     }
 }

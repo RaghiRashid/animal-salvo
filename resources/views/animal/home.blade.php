@@ -47,6 +47,11 @@
                <div class="underline"></div>
                <label for="animal_color">Cor</label>
             </div>
+            <div class="input-data">
+               <input type="text" required>
+               <div class="underline"></div>
+               <label for="">Foto</label>
+            </div>
 
          </div>
          <div class="text2">
@@ -120,6 +125,7 @@
          </div>
       </form>
 
+   </div>
 
 
 </x-layout>
