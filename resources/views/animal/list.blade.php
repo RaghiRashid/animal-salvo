@@ -4,7 +4,7 @@
     <div><a class="home-link" href="/animal">Home</a></div>
   </nav>
 
-  <form>
+  <form class='form-filter'>
     <select name="especie" id="especie">
       <option value="cachorro">-- Espécie --</option>
       <option value="cachorro">Cachorro</option>
