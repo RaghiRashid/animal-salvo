@@ -11,6 +11,15 @@ function buscarEndereco(cep) {
       .catch(error => console.error('Erro:', error));
 }
 
+document.getElementById('scrollButton').addEventListener('click', function() {
+  scrollToSection();
+});
+
+function scrollToSection() {
+  const section = document.getElementById('cadastro');
+  section.scrollIntoView({ behavior: 'smooth' });
+}
+
 
 document.getElementById('zip_code').addEventListener('blur', function() {
   let cep = this.value.replace(/\D/g, '');

@@ -39,6 +39,12 @@
         <option value="Branco">por banco</option>
     </select>
 
+    <select name="Status" id="Status">
+        <option value="">-- Status --</option>
+        <option value="A">Animal procurando o tutor</option>
+        <option value="T">Tutor procurando o animal</option>
+    </select>
+
     <select name="UF" id="UF">
       <option value="">-- Estado --</option>
     </select>

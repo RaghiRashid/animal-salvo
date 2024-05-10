@@ -4,15 +4,15 @@
       <img src={{asset("/img/animal.png")}} alt="Imagem" class="image">
       <div class="buttons">
          <button class='btn1'><a href="/animal/show">Lista de animais</a></button>
-         <button class='btn2'>Cadastrar animal </button>
+         <button id="scrollButton" class='btn2'>Cadastrar animal </button>
       </div>
    </div>
 
-   <div class="cadastro">
+   <div id='cadastro' class="cadastro">
       <div class="text">
          Cadastre o Animal Resgatado
       </div>
-      <form action="{{route('animal.store')}}" method="POST">
+      <form action="{{route('animal.store')}}" method="post" enctype="multipart/form-data">
          @csrf
          <div class="form-row">
             <div class="input-data">
@@ -46,47 +46,36 @@
                </select>
             </div>
             <div class="input-data">
-               <input type="text" required>
-               <div class="underline"></div>
-               <label for="">Foto</label>
+               <select class="form-select custom-select rounded-3" name="Status" id="Status">
+                  <option value="">-- Status --</option>
+               </select>
             </div>
-
          </div>
+
          <div class="text2">
             Localização
          </div>
          <div class="form-row">
             <div class="input-data">
-               <input id="zip_code" name="zip_code" type="text" required>
+               <input placeholder='CEP' id="zip_code" name="zip_code" type="text" required>
                <div class="underline"></div>
-               <label for="zip_code">Cep</label>
             </div>
             <div class="input-data">
-               <input id="street" name="street" type="text" required>
-               <div class="underline"></div>
-               <label for="street">Rua</label>
+               <input placeholder='Rua' id="street" name="street" type="text" required>
             </div>
             <div class="input-data">
-               <input id="district" name="district" type="text" required>
-               <div class="underline"></div>
-               <label for="district">Bairro</label>
+               <input placeholder='Bairro' id="district" name="district" type="text" required>
             </div>
          </div>
          <div class="form-row">
             <div class="input-data">
-               <input id="city" name="city" type="text" required>
-               <div class="underline"></div>
-               <label for="city">Cidade</label>
+               <input placeholder='Cidade' id="city" name="city" type="text" required>
             </div>
             <div class="input-data">
-               <input id="state" name="state" type="text" required>
-               <div class="underline"></div>
-               <label for="state">Estado</label>
+               <input placeholder='Estado' id="state" name="state" type="text" required>
             </div>
             <div class="input-data">
-               <input id="number" name="number" type="text" required>
-               <div class="underline"></div>
-               <label for="number">Número</label>
+               <input placeholder='Número' id="number" name="number" type="text" required>
             </div>
          </div>
 
@@ -95,21 +84,22 @@
          </div>
          <div class="form-row">
             <div class="input-data">
-               <input id="name" name="name" type="text">
-               <div class="underline"></div>
-               <label for="name">Nome</label>
+               <input placeholder='Nome' id="name" name="name" type="text">
             </div>
             <div class="input-data">
-               <input id="email" name="email" type="text">
-               <div class="underline"></div>
-               <label for="email">Email</label>
+               <input placeholder='E-mail' id="email" name="email" type="text">
             </div>
             <div class="input-data">
-               <input id="phone_number" name="phone_number" type="text">
-               <div class="underline"></div>
-               <label for="phone_number">WhatsApp</label>
+               <input placeholder='WhatsApp' id="phone_number" name="phone_number" type="text">
             </div>
          </div>
+         <div class="text2">
+            Envie uma foto do PET
+         </div>
+         <div class="form-row">
+            <input type="file" name="fileUpload">
+         </div>
+
          <div class="form-row">
             <div class="input-data">
                <div class="form-row submit-btn">
