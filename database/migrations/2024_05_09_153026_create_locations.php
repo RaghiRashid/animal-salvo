@@ -19,9 +19,9 @@ class CreateLocations extends Migration
             $table->string('street', 150);
             $table->string('zip_code', 20);
             $table->string('district', 150);
+            $table->integer('number');
             $table->string('city', 150);
             $table->string('state', 150);
-            $table->string('status', 1);
             $table->timestamps();
         });
     }
@@ -33,7 +33,8 @@ class CreateLocations extends Migration
      */
     public function down()
     {
-        Schema::table('locations', function (Blueprint $table) {
+        Schema::table('locations', function (Blueprint $table)
+        {
             //
         });
     }

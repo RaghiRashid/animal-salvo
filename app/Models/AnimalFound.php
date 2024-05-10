@@ -9,14 +9,17 @@ class AnimalFound extends Model
 {
     use HasFactory;
 
+    protected $table = "animals_found";
+
     protected $fillable = [
         'animal_color',
-        'animal_image',
+        'gender',
+        'status',
         'animal_breed',
         'animal_size',
         'animal_specie',
-        'found_location_id',
-        'gender'
+        'location_id',
+        'user_id'
     ];
 
     public function breed()

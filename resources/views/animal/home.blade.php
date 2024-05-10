@@ -16,24 +16,30 @@
          @csrf
          <div class="form-row">
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="especie" id="especie">
+               <select class="form-select custom-select rounded-3" name="animal_specie" id="especie_id">
                   <option value="">-- Espécie --</option>
+                  @foreach ($species as $specie)
+                  <option value="{{$specie->id}}">{{$specie->specie_name}}</option>
+                  @endforeach
                </select>
             </div>
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="raca" id="raca">
-                  <option value="">-- Raça --</option>
+               <select class="form-select custom-select rounded-3" name="animal_breed" id="breed_id">
+                  <option value="">Selecione uma espécie</option>
                </select>
             </div>
             <div class="input-data">
                <select class="form-select custom-select rounded-3" name="gender" id="gender">
                   <option value="">-- Gênero --</option>
+                  <option value="M">Macho</option>
+                  <option value="F">Femea</option>
+                  <option value="N">Não identificado</option>
                </select>
             </div>
          </div>
          <div class="form-row">
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="porte" id="porte">
+               <select class="form-select custom-select rounded-3" name="animal_size" id="animal_size">
                   <option value="">-- Porte --</option>
                   <option value="pequeno">Pequeno</option>
                   <option value="medio">Médio</option>
@@ -41,7 +47,7 @@
                </select>
             </div>
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="cor" id="cor">
+               <select class="form-select custom-select rounded-3" name="animal_color" id="animal_color">
                   <option value="">-- Cor --</option>
                   <option value="Preta"> Preta </option>
                   <option value="Branca"> Branca </option>
@@ -53,8 +59,10 @@
                </select>
             </div>
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="Status" id="Status">
+               <select class="form-select custom-select rounded-3" name="status" id="status">
                   <option value="">-- Status --</option>
+                  <option value="1">Cachorro achado</option>
+                  <option value="2">Procurando cachorro</option>
                </select>
             </div>
          </div>
@@ -64,7 +72,7 @@
          </div>
          <div class="form-row">
             <div class="input-data">
-               <input placeholder='CEP' id="zip_code" name="zip_code" type="text" required>
+               <input placeholder='CEP' id="zip_code" name="zip_code" type="text" maxlength="8" required>
                <div class="underline"></div>
             </div>
             <div class="input-data">
@@ -104,7 +112,7 @@
             Envie uma foto do PET
          </div>
          <div class="form-row">
-            <input type="file" name="fileUpload">
+            <input name="animal_image" type="file" name="fileUpload">
          </div>
 
          <div class="form-row">
