@@ -22,6 +22,13 @@ class AnimalController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'animal_image' => 'required|file|mimes:jpeg,png,gif|max:2048',
+        ]);
+
+        $image_path = $request->file('animal_image')->store('uploads', 'public');
+        $request->image_path = $image_path;
+
         $user = User::where('email', $request->email)->first();
 
         if (empty($user))
@@ -38,10 +45,9 @@ class AnimalController extends Controller
             'state',
         ]));
 
-        //dd($location->id);
-
         $animal = AnimalFound::create([
             'animal_color' => $request->animal_color,
+            'animal_image' => $request->image_path,
             'gender' => $request->gender,
             'status'  => $request->status,
             'animal_breed' => $request->animal_breed,

@@ -13,6 +13,7 @@ class AnimalFound extends Model
 
     protected $fillable = [
         'animal_color',
+        'animal_image',
         'gender',
         'status',
         'animal_breed',

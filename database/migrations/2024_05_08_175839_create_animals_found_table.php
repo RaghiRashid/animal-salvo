@@ -17,7 +17,7 @@ class CreateAnimalsFoundTable extends Migration
         {
             $table->id();
             $table->strign('animal_color', 69);
-            $table->string('animal_image', 50)->nullable();
+            $table->string('animal_image', 200);
             $table->string('gender', 1);
             $table->string('status', 1);
             $table->integer('animal_breed');

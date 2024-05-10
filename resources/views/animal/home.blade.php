@@ -112,10 +112,10 @@
             Envie uma foto do PET
          </div>
          <div class="form-row">
-            <input name="animal_image" type="file" name="fileUpload">
+            <input name="animal_image" type="file" name="animal_image accept='image/gif, image/jpeg, image/png'">
          </div>
 
-         <div class="form-row">
+         <div class=" form-row">
             <div class="input-data">
                <div class="form-row submit-btn">
                   <div class="input-data">
