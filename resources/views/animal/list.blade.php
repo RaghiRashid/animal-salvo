@@ -4,7 +4,7 @@
     <div><a  class="home-link" href="/animal">Home</a></div>
 </nav>
 
-<form>
+<form class='form-filter'>
     <select name="especie" id="especie">
         <option value="cachorro">-- Espécie --</option>
         <option value="cachorro">Cachorro</option>
@@ -35,15 +35,14 @@
     </select>
 
     <select name="Cor" id="Cor">
-        <option value="Branco">-- Cor --</option>
-         <option value="">-- Cor --</option>
-                  <option value="Preta"> Preta </option>
-                  <option value="Branca"> Branca </option>
-                  <option value="Cinza"> Cinza </option>
-                  <option value="Caramelo"> Dourada/Caramelo </option>
-                  <option value="Marrom"> Marrom </option>
-                  <option value="Vermelha"> Vermelha </option>
-                  <option value="Outra"> Outra </option>
+      <option value="">-- Cor --</option>
+      <option value="Preta"> Preta </option>
+      <option value="Branca"> Branca </option>
+      <option value="Cinza"> Cinza </option>
+      <option value="Caramelo"> Dourada/Caramelo </option>
+      <option value="Marrom"> Marrom </option>
+      <option value="Vermelha"> Vermelha </option>
+      <option value="outra">Outra</option>
     </select>
 
     <select name="Status" id="Status">
