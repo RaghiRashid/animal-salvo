@@ -13,7 +13,7 @@ class CreateLocations extends Migration
      */
     public function up()
     {
-        Schema::create('animals_specie', function (Blueprint $table)
+        Schema::create('locations', function (Blueprint $table)
         {
             $table->id();
             $table->string('street', 150);

@@ -17,6 +17,7 @@ class AnimalController extends Controller
 
     public function store(Request $request)
     {
+       
         $request->validate([
             'animal_color'      => 'required',
             'gender'            => 'required',
@@ -27,8 +28,6 @@ class AnimalController extends Controller
         ]);
 
         $user = User::create($request->only(['name', 'email', 'phone_number']));
-
-        dd($user);
 
         $location = Location::create($request->only([
             'street',
@@ -52,6 +51,8 @@ class AnimalController extends Controller
         ]));
 
         return redirect('/animal');
+    }
+
     public function show()
     {
         return view('animal.list');

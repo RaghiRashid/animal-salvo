@@ -1,14 +1,9 @@
 <x-layout>
 
-   <nav class="navbar">
-      <div class="logo">Animal Salvo</div>
-      <div><a class="home-link" href="/animal">Home</a></div>
-   </nav>
-
    <div class="content">
       <img src={{asset("/img/animal.png")}} alt="Imagem" class="image">
       <div class="buttons">
-         <button class='btn1'>Lista de animais</button>
+         <button class='btn1'><a href="/animal/show">Lista de animais</a></button>
          <button class='btn2'>Cadastrar animal </button>
       </div>
    </div>
@@ -21,31 +16,34 @@
          @csrf
          <div class="form-row">
             <div class="input-data">
-               <input name="animal_specie" id="animal_specie" type="text" required>
-               <div class="underline"></div>
-               <label for="animal_specie">Espécie</label>
+               <select class="form-select custom-select rounded-3" name="especie" id="especie">
+                  <option value="">-- Espécie --</option>
+               </select>
             </div>
             <div class="input-data">
-               <input id="animal_breed" name="animal_breed" type="text" required>
-               <div class="underline"></div>
-               <label for="animal_breed">Raça</label>
+               <select class="form-select custom-select rounded-3" name="raca" id="raca">
+                  <option value="">-- Raça --</option>
+               </select>
             </div>
             <div class="input-data">
-               <input id="gender" name="gender" type="text" required>
-               <div class="underline"></div>
-               <label for="gender">Gênero</label>
+               <select class="form-select custom-select rounded-3" name="gender" id="gender">
+                  <option value="">-- Gênero --</option>
+               </select>
             </div>
          </div>
          <div class="form-row">
             <div class="input-data">
-               <input id="animal_size" name="animal_size" type="text" required>
-               <div class="underline"></div>
-               <label for="animal_size">Porte</label>
+               <select class="form-select custom-select rounded-3" name="porte" id="porte">
+                  <option value="">-- Porte --</option>
+                  <option value="pequeno">Pequeno</option>
+                  <option value="medio">Médio</option>
+                  <option value="grande">Grande</option>
+               </select>
             </div>
             <div class="input-data">
-               <input id="animal_color" name="animal_color" type="text" required>
-               <div class="underline"></div>
-               <label for="animal_color">Cor</label>
+               <select class="form-select custom-select rounded-3" name="cor" id="cor">
+                  <option value="">-- Cor --</option>
+               </select>
             </div>
             <div class="input-data">
                <input type="text" required>

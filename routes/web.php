@@ -20,3 +20,5 @@ Route::get('/', function ()
 });
 
 Route::resource('animal', AnimalController::class)->only(['index', 'show', 'create', 'store']);
+
+Route::get('via-cep/{cep}', [\App\Http\Controllers\ViaCepController::class, 'retornaEndereco']);
