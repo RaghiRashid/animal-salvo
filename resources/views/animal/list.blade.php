@@ -36,7 +36,14 @@
 
     <select name="Cor" id="Cor">
         <option value="Branco">-- Cor --</option>
-        <option value="Branco">por banco</option>
+         <option value="">-- Cor --</option>
+                  <option value="Preta"> Preta </option>
+                  <option value="Branca"> Branca </option>
+                  <option value="Cinza"> Cinza </option>
+                  <option value="Caramelo"> Dourada/Caramelo </option>
+                  <option value="Marrom"> Marrom </option>
+                  <option value="Vermelha"> Vermelha </option>
+                  <option value="Outra"> Outra </option>
     </select>
 
     <select name="Status" id="Status">

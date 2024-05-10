@@ -43,6 +43,13 @@
             <div class="input-data">
                <select class="form-select custom-select rounded-3" name="cor" id="cor">
                   <option value="">-- Cor --</option>
+                  <option value="Preta"> Preta </option>
+                  <option value="Branca"> Branca </option>
+                  <option value="Cinza"> Cinza </option>
+                  <option value="Caramelo"> Dourada/Caramelo </option>
+                  <option value="Marrom"> Marrom </option>
+                  <option value="Vermelha"> Vermelha </option>
+                  <option value="Outra"> Outra </option>
                </select>
             </div>
             <div class="input-data">
