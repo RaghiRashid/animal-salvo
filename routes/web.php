@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnimalController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,8 @@ Route::resource('animal', AnimalController::class)->only(['index', 'show', 'crea
 
 Route::get('via-cep/{cep}', [\App\Http\Controllers\ViaCepController::class, 'retornaEndereco']);
 Route::get('/breeds-by-specie/{id}', [AnimalController::class, 'getBreedsBySpecie']);
+
+
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('login', [AdminController::class, 'login']);
+});
