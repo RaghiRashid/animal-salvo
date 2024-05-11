@@ -16,7 +16,7 @@ class CreateAnimalsFoundTable extends Migration
         Schema::create('animals_found', function (Blueprint $table)
         {
             $table->id();
-            $table->strign('animal_color', 69);
+            $table->string('animal_color', 69);
             $table->string('animal_image', 200);
             $table->string('gender', 1);
             $table->string('status', 1);
