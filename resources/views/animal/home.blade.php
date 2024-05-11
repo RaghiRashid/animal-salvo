@@ -66,7 +66,6 @@
                </select>
             </div>
          </div>
-      
          <div class="text2">
             Localização
          </div>
