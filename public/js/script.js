@@ -11,29 +11,36 @@ function buscarEndereco(cep) {
     .catch(error => console.error('Erro:', error));
 }
 
-document.getElementById('scrollButton').addEventListener('click', function () {
-  scrollToSection();
-});
+let scrollButton = document.getElementById('scrollButton');
+
+if(scrollButton){
+  scrollButton.addEventListener('click', function () {
+    scrollToSection();
+  });
+}
 
 function scrollToSection() {
   const section = document.getElementById('cadastro');
   section.scrollIntoView({ behavior: 'smooth' });
 }
 
+let zip_code =  document.getElementById('zip_code')
 
-document.getElementById('zip_code').addEventListener('blur', function () {
-  let cep = this.value.replace(/\D/g, '');
-  if (cep.length === 8) {
-    console.log('teste')
-    buscarEndereco(cep);
-  }
-});
+if(zip_code){
+  zip_code.addEventListener('blur', function () {
+    let cep = this.value.replace(/\D/g, '');
+    if (cep.length === 8) {
+      console.log('teste')
+      buscarEndereco(cep);
+    }
+  });
+}
 
 document.getElementById('especie_id').addEventListener('change', function () {
   let specie = this.value;
 
   if (specie) {
-    fetch(`breeds-by-specie/${specie}`)
+    fetch(`/breeds-by-specie/${specie}`)
       .then(response => response.json())
       .then(data => {
         let breedsSelect = document.getElementById('breed_id');
@@ -46,4 +53,8 @@ document.getElementById('especie_id').addEventListener('change', function () {
         });
       })
   }
-})
+});
+
+$("li").click(function () {
+  $(this).addClass("active").siblings().removeClass("active");
+});

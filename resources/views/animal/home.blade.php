@@ -16,20 +16,20 @@
          @csrf
          <div class="form-row">
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="animal_specie" id="especie_id">
+               <select required class="form-select custom-select rounded-3" name="animal_specie" id="especie_id">
                   <option value="">-- Espécie --</option>
                   @foreach ($species as $specie)
-                  <option value="{{$specie->id}}">{{$specie->specie_name}}</option>
+                     <option value="{{$specie->id}}">{{$specie->specie_name}}</option>
                   @endforeach
                </select>
             </div>
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="animal_breed" id="breed_id">
-                  <option value="">Selecione uma espécie</option>
+               <select class="form-select custom-select rounded-3" name="animal_breed" id="breed_id" required>
+                  <option value="">Selecione uma Raça</option>
                </select>
             </div>
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="gender" id="gender">
+               <select class="form-select custom-select rounded-3" name="gender" id="gender" required>
                   <option value="">-- Gênero --</option>
                   <option value="M">Macho</option>
                   <option value="F">Femea</option>
@@ -39,7 +39,7 @@
          </div>
          <div class="form-row">
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="animal_size" id="animal_size">
+               <select class="form-select custom-select rounded-3" name="animal_size" id="animal_size" required>
                   <option value="">-- Porte --</option>
                   <option value="pequeno">Pequeno</option>
                   <option value="medio">Médio</option>
@@ -47,7 +47,7 @@
                </select>
             </div>
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="animal_color" id="animal_color">
+               <select class="form-select custom-select rounded-3" name="animal_color" id="animal_color" required>
                   <option value="">-- Cor --</option>
                   <option value="Preta"> Preta </option>
                   <option value="Branca"> Branca </option>
@@ -59,10 +59,10 @@
                </select>
             </div>
             <div class="input-data">
-               <select class="form-select custom-select rounded-3" name="status" id="status">
+               <select class="form-select custom-select rounded-3" name="status" id="status" required>
                   <option value="">-- Status --</option>
-                  <option value="1">Cachorro achado</option>
-                  <option value="2">Procurando cachorro</option>
+                  <option value="1">Animal buscando tutor</option>
+                  <option value="2">Tutor buscando animal</option>
                </select>
             </div>
          </div>
@@ -99,20 +99,20 @@
          </div>
          <div class="form-row">
             <div class="input-data">
-               <input placeholder='Nome' id="name" name="name" type="text">
+               <input placeholder='Nome' id="name" name="name" type="text" required>
             </div>
             <div class="input-data">
-               <input placeholder='E-mail' id="email" name="email" type="text">
+               <input placeholder='E-mail' id="email" name="email" type="text" required>
             </div>
             <div class="input-data">
-               <input placeholder='WhatsApp' id="phone_number" name="phone_number" type="text">
+               <input placeholder='WhatsApp' id="phone_number" name="phone_number" maxlength='11' type="text" required>
             </div>
          </div>
          <div class="text2">
             Envie uma foto do PET
          </div>
          <div class="form-row">
-            <input name="animal_image" type="file" name="animal_image accept='image/gif, image/jpeg, image/png'">
+            <input required name="animal_image" type="file" name="animal_image accept='image/gif, image/jpeg, image/png'">
          </div>
 
          <div class=" form-row">

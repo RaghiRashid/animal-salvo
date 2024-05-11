@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnimalsBreadTable extends Migration
+class CreateAnimalsBreedTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAnimalsBreadTable extends Migration
      */
     public function up()
     {
-        Schema::create('animals_bread', function (Blueprint $table)
+        Schema::create('animals_breed', function (Blueprint $table)
         {
             $table->id();
             $table->string('breed_name', 100);
@@ -29,6 +29,6 @@ class CreateAnimalsBreadTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animals_bread');
+        Schema::dropIfExists('animals_breed');
     }
 }
