@@ -25,7 +25,6 @@ class CreateAnimalsFoundTable extends Migration
             $table->integer('animal_specie');
             $table->integer('location_id');
             $table->integer('user_id');
-            $table->string('description', 200);
             $table->timestamps();
         });
     }
