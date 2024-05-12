@@ -63,9 +63,13 @@ class AnimalController extends Controller
 
     public function show()
     {
+
+        $perPage = 5; // Número de itens por página
+        $page = isset($_GET['page']) ? $_GET['page'] : 1; // Página atual, padrão é 1
+
         $species = AnimalSpecie::all();
-        //$animal = AnimalFound::all();
-        $animals = DB::table('animals_found')
+
+        $animalsQuery = DB::table('animals_found')
         ->select('animals_found.*', 
         'animals_specie.specie_name', 
         'animals_breed.breed_name',
@@ -82,12 +86,45 @@ class AnimalController extends Controller
         ->join('animals_specie', 'animals_found.animal_specie', '=', 'animals_specie.id')
         ->join('animals_breed', 'animals_found.animal_breed', '=', 'animals_breed.id')
         ->join('locations', 'animals_found.location_id', '=', 'locations.id')   
-        ->leftJoin('users', 'animals_found.user_id', '=', 'users.id')
-        ->get();
+        ->leftJoin('users', 'animals_found.user_id', '=', 'users.id');
+
+        if (isset($_GET['especie']) && !empty($_GET['especie'])) {
+            $animalsQuery->where('animals_found.animal_specie', $_GET['especie']);
+        }
+        if (isset($_GET['raca']) && !empty($_GET['raca'])) {
+            $animalsQuery->where('animals_found.animal_breed', $_GET['raca']);
+        }
+
+        if (isset($_GET['size']) && !empty($_GET['size'])) {
+            $animalsQuery->where('animals_found.animal_size', $_GET['size']);
+        }
+        
+        if (isset($_GET['gender']) && !empty($_GET['gender'])) {
+            $animalsQuery->where('animals_found.gender', $_GET['gender']);
+        }
+
+        if (isset($_GET['cor']) && !empty($_GET['cor'])) {
+            $animalsQuery->where('animals_found.animal_color', $_GET['cor']);
+        }
+
+        if (isset($_GET['Status']) && !empty($_GET['Status'])) {
+            $animalsQuery->where('animals_found.status', $_GET['Status']);
+        }
+
+        //$animals = $animalsQuery->get();
+        $animals = $animalsQuery->paginate(50);
+
+        $nextPage = $animals->nextPageUrl();
+        $previusPage = $animals->previousPageUrl();
+
+        //$message = session('success.message');
 
         return view('animal.list')
         ->with('species', $species)
-        ->with('animals', $animals);
+        ->with('animals', $animals)
+        ->with('nextPage', $nextPage)
+        ->with('previusPage', $previusPage);
+        
     }
 
     public function getBreedsBySpecie($id)

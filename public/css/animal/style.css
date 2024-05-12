@@ -49,8 +49,20 @@ a {
   background-color: #3C3435;
 }
 
+.btn1:hover{
+  background-color: #4CA663;
+  border: 1px solid white;
+
+}
+
+.btn2:hover{
+  color: #ffff;
+  background-color: #4CA663;
+  border: 1px solid #ffff;
+}
+
 .btn2 {
-  color: black;
+  color: #3C3435;
   background-color: #ffff;
 }
 
@@ -83,18 +95,20 @@ button:hover {
 
 .cadastro .text {
   text-align: center;
+  margin-bottom:10%;
   font-size: 41px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
-  background: -webkit-linear-gradient(right, #4CA663, #4CA663, #4CA663, #3C3435);
+  background: -webkit-linear-gradient(right, #4CA663, #2B332D, #486650, #4CA663);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+
 .cadastro .text2 {
-  font-size: 25px;
-  text-align: center;
-  font-weight: 600;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 700;
   font-family: 'Poppins', sans-serif;
   background: -webkit-linear-gradient(right,#4CA663, #486650, #4CA663, #3C3435);
   -webkit-background-clip: text;
@@ -113,7 +127,7 @@ button:hover {
 form .form-row .input-data {
   width: 100%;
   height: 40px;
-  margin: 0 20px;
+/*   margin: 0 20px;*/
   position: relative;
 }
 
@@ -228,6 +242,8 @@ form .form-row .textarea {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+
 
 .card {
   margin: 10px;
@@ -383,4 +399,29 @@ select:focus {
 }
 .pagination li:last-child {
   margin: 0 0 0 15px;
+}
+
+
+.about-us {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #4CA663;
+}
+
+.about-us-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: white;
+}
+
+.about-us-text {
+  text-align: center;
+  margin-bottom: 12%;
+  line-height: 1.5;
+  color: white;
+
 }

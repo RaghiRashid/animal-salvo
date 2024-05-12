@@ -14,6 +14,9 @@
       </div>
       <form action="{{route('animal.store')}}" method="post" enctype="multipart/form-data">
          @csrf
+         <div class="text2">
+            Informações do pet
+         </div>
          <div class="form-row">
             <div class="input-data">
                <select required class="form-select custom-select rounded-3" name="animal_specie" id="especie_id">
@@ -114,6 +117,8 @@
             <input required name="animal_image" type="file" name="animal_image accept='image/gif, image/jpeg, image/png'">
          </div>
 
+         <button type='submit'>Cadastrar</button>
+{{-- 
          <div class=" form-row">
             <div class="input-data">
                <div class="form-row submit-btn">
@@ -124,10 +129,25 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div> --}}
       </form>
-
+   </div>
+<div class='about-us'>
+   <div class="about-us-title">
+     Como funciona?
    </div>
 
+   <div class="about-us-text">
+      Somos um projeto totalmente voluntário, sem fins lucrativos. 
 
+      Nosso objetivo é ajudar as pessoas a reencontrarem seus amados pets. Por favor, pedimos que não utilize a </br> ferramenta 
+
+      de forma indevida, pois ela proporciona liberdade e facilita os caminhos de todos, sem burocracia.</br>
+      </br>
+      Cadastre seu anúncio de forma rápida e fácil, adicionando fotos, localização e informações de contato.</br> Verifique a lista de pets perdidos ou esperando pelo seu dono.
+      </br>  </br>
+      Desejamos sucesso em sua busca!
+
+   </div>
+</div>
 </x-layout>
