@@ -64,9 +64,6 @@ class AnimalController extends Controller
     public function show()
     {
 
-        $perPage = 5; // Número de itens por página
-        $page = isset($_GET['page']) ? $_GET['page'] : 1; // Página atual, padrão é 1
-
         $species = AnimalSpecie::all();
 
         $animalsQuery = DB::table('animals_found')
