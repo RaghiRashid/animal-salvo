@@ -45,8 +45,12 @@ document.getElementById('especie_id').addEventListener('change', function () {
       .then(data => {
         let breedsSelect = document.getElementById('breed_id');
         breedsSelect.innerHTML = '';
+        let option = document.createElement('option');
+          option.value ='';
+          option.text = '-- Selecione uma raça --';
+          breedsSelect.appendChild(option);
         data.forEach(breed => {
-          var option = document.createElement('option');
+          let option = document.createElement('option');
           option.value = breed.id;
           option.text = breed.breed_name;
           breedsSelect.appendChild(option);

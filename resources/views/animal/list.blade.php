@@ -1,14 +1,16 @@
 <x-layout>
   <nav class="navbar">
     <div class="logo">Animal Salvo</div>
-    <div><a class="home-link" href="/animal">Home</a></div>
+    <div><a class="home-link" href="/animal"><i class="fas fa-home fa-2x"></i>
+</a></div>
   </nav>
 <div class='container'>
 <form class='form-filter'>
+    <i class="fas fa-filter fa-2x" style="color: #486650;"></i>
     <select class='space' name="especie" id="especie_id">
         <option value="">-- Espécie --</option>
         @foreach ($species as $specie)
-            <option value="{{$specie->id}}">{{$specie->specie_name}}</option>
+            <option {{ isset($_GET['especie']) && $_GET['especie'] == $specie->id ? 'selected' : '' }} value="{{$specie->id}}">{{$specie->specie_name}}</option>
         @endforeach
     </select>
 
@@ -60,7 +62,7 @@
         </div>
         <div class="card-body">
           @if($animal->status == 1)
-          <span class="tag tag-teal" style='margin-bottom:5px;'>
+          <span class="tag tag-teal">
               Animal buscando tutor
             </span>
           @endif
